@@ -10,11 +10,7 @@ print( targetmask & 0b1000 ) # BGS # 也可以 targetmask & 2**2
 print('#---------------------------------')
 import numpy as np
 from desitarget import targetmask
-from desiutil.bitmask import BitMask
-_bitdefs  = targetmask.load_mask_bits() 
-desi_mask = BitMask('desi_mask', _bitdefs) 
-bgs_mask  = BitMask('bgs_mask',  _bitdefs) 
-mws_mask  = BitMask('mws_mask',  _bitdefs) 
+from desitarget.targets import desi_mask, bgs_mask, mws_mask
 
 types = ['LRG', 'ELG', 'QSO', 'ELG_LOP', 'ELG_HIP', 'ELG|LRG|QSO', 'BGS_ANY', 'MWS_ANY']
 #bitnum = 2**0=1  2**1=2 2**2=4  2**5=32    2*6=64   111=1+2+4=7    2**61,     2**62
