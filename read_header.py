@@ -13,8 +13,11 @@ def getargs():
     return args 
 
 def fits2zpt(fitsname, return_AB = True):  
-
-    hdu = fits.open(fitsname)
+    if os.path.isfile(fitsname):
+        hdu = fits.open(fitsname)
+    else:
+        raise Exception("# Can not find input image")
+    
     hdr = hdu[0]
     PHOTFLAM = hdr.header['PHOTFLAM']
     PHOTPLAM = hdr.header['PHOTPLAM']
