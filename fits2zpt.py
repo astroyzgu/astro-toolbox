@@ -1,8 +1,8 @@
 from astropy.io import fits
 import numpy as np
-import argparse
 import os 
 
+import argparse
 def getargs(): 
     parser = argparse.ArgumentParser(
     prog = 'fits2zpt', 
