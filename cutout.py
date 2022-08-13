@@ -9,7 +9,7 @@ import numpy as np
 import argparse
 def getargs(): 
     parser = argparse.ArgumentParser(
-    prog = 'cutout2d', 
+    prog = 'cutout', 
     formatter_class = argparse.ArgumentDefaultsHelpFormatter) 
     parser.spilog = ''
     parser.description = '''Cutout image from raw image (sci or wht)'''
