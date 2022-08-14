@@ -20,12 +20,26 @@ tail -n +2 data.tbl | sort -nk 2 | awk '$2 > 0.75 {print $1}' > data1.tbl
 tail -n +2 data2.tbl|awk '{print $1} ' > data3.tbl 
 diff data1.tbl data2.tbl -y -W30 |awk '$1 != $2 '
 
-# download/upload ############################################################ 
+### download/upload ######################################################### 
 - 服务器上传或下载
   rsync --progress -avz  username@192.160.0.1:/data/reduction  .
 
 
-# compresion/decompression ###################################################
+### compresion/decompression ################################################
 -  *.bz2                                                                      
    bzip2 -d *.tar.bz2
    tar -xf *.tar
+
+### shell script ############################################################
+# 字符串的赋值，替换和打印
+sciname='../image/smacs0723-f356w_test_sci.fits'
+whtname=${sciname/sci/wht}
+echo 'sciname:  ' $sciname
+echo 'whtname:  ' $whtname
+
+# 判断字符串中是否包含某串字符
+if echo $whtname | grep sci; then 
+   echo 'contain sci'
+else 
+   echo 'not contain sci'
+fi
