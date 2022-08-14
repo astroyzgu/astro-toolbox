@@ -1,0 +1,31 @@
+awk 
+cat  
+grep
+sort - http://man.linuxde.net/sort
+     - sort -nk 1 filename 
+
+sed  - sed -i '244d' filename  # Remove the first 244 lines
+                               # Caution!!! Edit the file diectly 
+tail - output the last part of files
+head - tail -n  4 COSMOS.txt  # print last 4 lines 
+     - tail -n +4 COSMOS.txt # output starting with the Kth
+uniq
+diff - http://www.lampweb.org/linux/3/17.html
+
+tail -n +2 data.tbl | sort -nk 2  #从第二行开始，对第二列排序 
+tail -n +2 data.tbl | sort -nk 2 | awk '{print $1}'  #从第二行开始，对第二列排序并只打印第一行
+
+比较data.tbl 的满足条件的第一行和data2.tbl 中的第一的不同
+tail -n +2 data.tbl | sort -nk 2 | awk '$2 > 0.75 {print $1}' > data1.tbl
+tail -n +2 data2.tbl|awk '{print $1} ' > data3.tbl 
+diff data1.tbl data2.tbl -y -W30 |awk '$1 != $2 '
+
+# download/upload ############################################################ 
+- 服务器上传或下载
+  rsync --progress -avz  username@192.160.0.1:/data/reduction  .
+
+
+# compresion/decompression ###################################################
+-  *.bz2                                                                      
+   bzip2 -d *.tar.bz2
+   tar -xf *.tar
