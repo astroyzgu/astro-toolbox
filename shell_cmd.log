@@ -23,7 +23,8 @@ diff data1.tbl data2.tbl -y -W30 |awk '$1 != $2 '
 ### download/upload ######################################################### 
 - 服务器上传或下载
   rsync --progress -avz  username@192.160.0.1:/data/reduction  .
-
+- wget指定目录下所有文件
+  wget -c -r -np -k -L -p -A '*.fits' http://data/location
 
 ### compresion/decompression ################################################
 -  *.bz2                                                                      
