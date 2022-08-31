@@ -1,0 +1,6 @@
+python调用C++中的函数【最简明教程】
+
+参考: https://blog.csdn.net/leviopku/article/details/83824625  
+
+ g++ -o hello.so -shared -fPIC hello.cpp 
+ python python-main.py 
