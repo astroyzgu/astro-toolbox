@@ -1,0 +1,16 @@
+当前，相互传递的数据均32位(示例test32.f), 即:  
+int*4     numpy.int32     1维2维  -2147483648, 2147483647 
+real*8    numpy.float32   1维2维  有效数字为 6-7, 数值范围为 -3.4E+38～3.4E+38
+char*256  <class 'str'>   字符串  需小于256个字符
+
+代码主要分为两步: 
+1. CFFI, 将python程序转为C类型的打包接口， 基本可以直接和任何C代码交互。
+2. 利用Fortran与C语言类型互通的模块iso_c_binding, 在fortran用调用生成好的C接口。
+
+
+header
+module
+
+参考:
+Call python from Fortran: https://github.com/nbren12/call_py_fort.git 
+cffi documents: https://cffi.readthedocs.io/en/latest/embedding.html 
