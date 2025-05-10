@@ -1,0 +1,12 @@
+#!/Users/yzastro/miniconda3/envs/setuppkg/bin/python
+
+import sys,string
+import argparse
+import toolbox
+
+parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+parser.add_argument('chars', default = 'astro-toolbox works', type=str, nargs = 1, help='hello *')
+args        = parser.parse_args()
+
+toolbox.hello(args.chars[0])
+

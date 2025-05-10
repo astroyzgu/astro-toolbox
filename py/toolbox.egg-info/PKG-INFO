@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: toolbox
+Version: 1.0.0
+Summary: This is a toolbox for some simple tasks.
+Home-page: https://astroyzgu.github.io/
+Author: Yizhou Gu
+Author-email: guyizhou@sjtu.edu.cn
+Requires-Dist: requests
+Requires-Dist: importlib-metadata; python_version < "3.10"
+
+pipetemplate1.0
+
+pipetemplate1.0
+├── setup.py  # <--- more description
+├── bin/
+    ├── hello
+    └── ... (other excutable scripts)
+├── py/ 
+    └── mypackage
+        ├── __init__.py
+        └── ... (other Python files)
